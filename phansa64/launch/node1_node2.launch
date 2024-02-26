@@ -1,0 +1,10 @@
+<launch>
+    <arg name="text" default="Hello Class!!"/>  <!-- arg ใช้ประกาศตัวแปร จะใช้ในnodeไหน วางไว้ด้านบนnodeนั้น // รับจาก text+ตอบกลับ-->
+    <node name="Talker" pkg="phansa64" type="node1.py" output="screen"> <!-- ชื่อnode ที่อยู่ ชนิดข้อมูล output="screen" -->
+        <param name="text" value="$(arg text)"/> <!-- บอก parameter ที่ใช้คือ text รับค่าจาก "$(arg text)" -->
+    </node>
+
+    <node name="Listener" pkg="phansa64" type="node2.py" output="screen">
+    </node>
+
+</launch>
